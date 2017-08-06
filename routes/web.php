@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::group(['prefix'=>'admin','middleware'=>['absensi']],function() {
+	// Route diisi disini...
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
